@@ -1,0 +1,1694 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>踩踏 - 律动影像,街头节奏影像品牌</title>
+<meta name="description" content="踩踏是专注街头节奏与律动文化的影像品牌官网，聚合原创高清短片、创作者社区与行业观察，以官方视角持续发布精品内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101620'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23ff5a36' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ct-ink:#101620;
+  --ct-ink-2:#1b2331;
+  --ct-line:#e4e7ee;
+  --ct-muted:#6a7383;
+  --ct-accent:#ff5a36;
+  --ct-accent-soft:#fff0eb;
+  --ct-gold:#ffd166;
+  --ct-teal:#28b5b0;
+  --ct-bg:#f6f7fa;
+  --ct-white:#ffffff;
+  --ct-shadow:0 12px 34px rgba(16,22,32,.10);
+  --ct-radius:18px;
+  --ct-sticky:104px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ct-ink);
+  background:var(--ct-bg);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3,h4{line-height:1.3;font-weight:800}
+section[id]{scroll-margin-top:var(--ct-sticky)}
+.ct-wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+
+/* ============ 吸顶头部（公告条 + 页头） ============ */
+.ct-sticky-shell{position:sticky;top:0;z-index:60}
+.ct-notice-bar{
+  background:linear-gradient(90deg,#101620,#232c3d 60%,#101620);
+  color:#f2f4f8;font-size:13.5px;
+  display:flex;align-items:center;gap:12px;
+  padding:9px 0;
+}
+.ct-notice-bar .ct-wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ct-notice-tag{
+  flex:0 0 auto;
+  background:var(--ct-accent);color:#fff;
+  font-size:12px;font-weight:700;letter-spacing:.5px;
+  padding:2px 9px;border-radius:20px;
+}
+.ct-notice-list{display:flex;gap:22px;flex:1;overflow:hidden;min-width:0}
+.ct-notice-item{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.92}
+.ct-notice-item b{color:var(--ct-gold);font-weight:700}
+.ct-notice-more{flex:0 0 auto;color:var(--ct-gold);font-weight:700;font-size:13px}
+.ct-notice-more:hover{text-decoration:underline}
+
+.ct-header{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--ct-line)}
+.ct-header-inner{display:flex;align-items:center;gap:22px;padding:13px 0}
+.ct-brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.ct-brand-mark{
+  width:42px;height:42px;border-radius:13px;
+  background:var(--ct-ink);display:grid;place-items:center;
+  box-shadow:inset 0 0 0 2px rgba(255,90,54,.45);
+}
+.ct-brand-mark svg{width:24px;height:24px}
+.ct-brand-name{font-size:20px;font-weight:900;letter-spacing:1px}
+.ct-brand-name span{color:var(--ct-accent)}
+.ct-brand-sub{font-size:11px;color:var(--ct-muted);letter-spacing:2.4px;line-height:1}
+.ct-nav{display:flex;gap:4px;flex:1;justify-content:center;flex-wrap:wrap}
+.ct-nav a{
+  padding:7px 13px;border-radius:10px;font-size:14.5px;font-weight:600;color:#39424f;
+  transition:.2s;white-space:nowrap;
+}
+.ct-nav a:hover,.ct-nav a.ct-nav-active{background:var(--ct-accent-soft);color:var(--ct-accent)}
+.ct-header-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.ct-search{position:relative;display:flex;align-items:center}
+.ct-search input{
+  width:180px;padding:9px 38px 9px 14px;border-radius:22px;
+  border:1.5px solid var(--ct-line);background:#fbfbfd;
+  font-size:13.5px;outline:none;transition:.25s;color:var(--ct-ink);
+}
+.ct-search input:focus{border-color:var(--ct-accent);width:220px;background:#fff;box-shadow:0 0 0 4px rgba(255,90,54,.10)}
+.ct-search button{position:absolute;right:4px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ct-muted)}
+.ct-search button:hover{background:var(--ct-accent-soft);color:var(--ct-accent)}
+.ct-search-tip{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:#fff;border:1px solid var(--ct-line);border-radius:12px;
+  box-shadow:var(--ct-shadow);padding:8px;font-size:13px;color:var(--ct-muted);
+  display:none;z-index:70;
+}
+.ct-search-tip.ct-show{display:block}
+.ct-search-tip strong{color:var(--ct-accent)}
+.ct-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:22px;font-size:14px;font-weight:700;
+  transition:.22s;white-space:nowrap;
+}
+.ct-btn-primary{background:var(--ct-accent);color:#fff;box-shadow:0 8px 20px rgba(255,90,54,.30)}
+.ct-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,90,54,.38)}
+.ct-btn-ghost{background:#fff;color:var(--ct-ink);border:1.5px solid var(--ct-line)}
+.ct-btn-ghost:hover{border-color:var(--ct-accent);color:var(--ct-accent)}
+.ct-burger{display:none;width:42px;height:42px;border-radius:11px;border:1.5px solid var(--ct-line);background:#fff;place-items:center}
+.ct-burger span{display:block;width:18px;height:2px;background:var(--ct-ink);margin:3px 0;border-radius:2px;transition:.25s}
+.ct-burger.ct-open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.ct-burger.ct-open span:nth-child(2){opacity:0}
+.ct-burger.ct-open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+.ct-mobile-nav{display:none;background:#fff;border-bottom:1px solid var(--ct-line);padding:8px 0 16px}
+.ct-mobile-nav.ct-show{display:block}
+.ct-mobile-nav a{display:block;padding:11px 4px;border-bottom:1px dashed var(--ct-line);font-weight:600;font-size:15px}
+.ct-mobile-nav a:last-child{border-bottom:none}
+
+/* ============ 通用 ============ */
+.ct-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:2px;color:var(--ct-accent);text-transform:uppercase}
+.ct-eyebrow::before{content:"";width:22px;height:2px;background:var(--ct-accent);border-radius:2px}
+.ct-sec{padding:64px 0}
+.ct-sec-head{max-width:760px;margin-bottom:34px}
+.ct-sec-head h2{font-size:clamp(24px,3vw,34px);margin:10px 0 12px;letter-spacing:.5px}
+.ct-sec-head p{color:var(--ct-muted);font-size:15px}
+.ct-card{background:#fff;border-radius:var(--ct-radius);border:1px solid var(--ct-line);overflow:hidden;transition:.26s}
+.ct-card:hover{transform:translateY(-5px);box-shadow:var(--ct-shadow);border-color:#d8dde8}
+.ct-tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:20px;background:#f0f2f7;color:#4c5565}
+.ct-tag.ct-hot{background:var(--ct-accent-soft);color:var(--ct-accent)}
+.ct-tag.ct-teal{background:#e3f7f6;color:#137b77}
+
+/* ============ 首屏 ============ */
+.ct-hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 82% -8%,rgba(255,90,54,.20),transparent 62%),
+    radial-gradient(700px 400px at 6% 10%,rgba(40,181,176,.16),transparent 60%),
+    linear-gradient(180deg,#0e141e,#161f2d 68%,#1b2534);
+  color:#eef1f6;padding:66px 0 72px;
+}
+.ct-hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 2px,transparent 2px 9px);
+}
+.ct-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.ct-hero h1{font-size:clamp(40px,6.2vw,72px);letter-spacing:2px;line-height:1.05;margin:14px 0 8px}
+.ct-hero h1 em{font-style:normal;color:var(--ct-gold)}
+.ct-hero-slogan{font-size:clamp(15px,1.6vw,19px);font-weight:700;color:#cfd8e6;letter-spacing:1px;margin-bottom:16px}
+.ct-hero-slogan b{color:var(--ct-accent)}
+.ct-hero-desc{color:#b9c4d4;font-size:15px;max-width:560px;margin-bottom:22px}
+.ct-hero-desc strong{color:#fff;font-weight:700}
+.ct-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.ct-hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:520px}
+.ct-stat{
+  background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:14px 16px;backdrop-filter:blur(4px);
+}
+.ct-stat-num{font-size:clamp(20px,2.4vw,27px);font-weight:900;color:var(--ct-gold);letter-spacing:.5px}
+.ct-stat-num small{font-size:12px;font-weight:700;color:#cfd8e6;margin-left:3px}
+.ct-stat-label{font-size:12.5px;color:#9fabbd;margin-top:2px}
+.ct-hero-visual{position:relative}
+.ct-hero-cover{
+  border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 30px 60px rgba(0,0,0,.45);position:relative;aspect-ratio:16/10;background:#0b121c;
+}
+.ct-hero-cover img{width:100%;height:100%;object-fit:cover}
+.ct-hero-badge{
+  position:absolute;left:14px;bottom:14px;
+  display:flex;align-items:center;gap:9px;
+  background:rgba(10,16,26,.78);border:1px solid rgba(255,255,255,.17);
+  padding:7px 13px;border-radius:30px;font-size:12.5px;font-weight:700;color:#eaf0f8;
+}
+.ct-live-dot{width:8px;height:8px;border-radius:50%;background:var(--ct-accent);box-shadow:0 0 0 0 rgba(255,90,54,.7);animation:ctPulse 1.8s infinite}
+@keyframes ctPulse{0%{box-shadow:0 0 0 0 rgba(255,90,54,.65)}70%{box-shadow:0 0 0 12px rgba(255,90,54,0)}100%{box-shadow:0 0 0 0 rgba(255,90,54,0)}}
+.ct-hero-float{
+  position:absolute;right:-12px;top:-16px;background:#fff;color:var(--ct-ink);
+  border-radius:14px;padding:10px 15px;font-size:12.5px;font-weight:800;
+  box-shadow:0 16px 34px rgba(0,0,0,.35);display:flex;gap:8px;align-items:center;
+}
+.ct-hero-float i{width:26px;height:26px;border-radius:8px;background:var(--ct-accent-soft);display:grid;place-items:center;color:var(--ct-accent);font-style:normal}
+
+/* ============ 关键词深度解析 ============ */
+.ct-intro{background:#fff;border-bottom:1px solid var(--ct-line)}
+.ct-intro-grid{display:grid;grid-template-columns:250px 1fr;gap:44px;align-items:start}
+.ct-intro-aside{
+  position:sticky;top:calc(var(--ct-sticky) + 20px);
+  background:linear-gradient(160deg,#101620,#222d40);color:#e9eef6;
+  border-radius:20px;padding:24px 20px;box-shadow:var(--ct-shadow);
+}
+.ct-intro-aside h3{font-size:19px;color:#fff;margin-bottom:6px}
+.ct-intro-aside .ct-aside-line{width:38px;height:3px;background:var(--ct-accent);border-radius:3px;margin-bottom:14px}
+.ct-intro-aside p{font-size:13px;color:#aeb9c8;margin-bottom:14px}
+.ct-aside-chips{display:flex;flex-wrap:wrap;gap:7px}
+.ct-aside-chips span{font-size:12px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#dbe3ef}
+.ct-intro-body h2{font-size:clamp(23px,2.6vw,30px);margin-bottom:14px}
+.ct-intro-body h3{font-size:17.5px;margin:24px 0 8px;color:var(--ct-ink)}
+.ct-intro-body h3::before{content:"◆";color:var(--ct-accent);font-size:11px;margin-right:8px;vertical-align:2px}
+.ct-intro-body p{color:#48525f;font-size:15px;margin-bottom:12px;text-align:justify}
+.ct-intro-body p strong{color:var(--ct-ink);font-weight:700}
+.ct-intro-quote{
+  border-left:4px solid var(--ct-accent);background:var(--ct-accent-soft);
+  padding:14px 18px;border-radius:0 12px 12px 0;color:#7a3a26;font-size:14.5px;font-weight:600;margin:18px 0;
+}
+.ct-intro-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 6px}
+.ct-intro-num{border:1px solid var(--ct-line);border-radius:14px;padding:14px;background:#fbfbfd}
+.ct-intro-num b{display:block;font-size:22px;color:var(--ct-accent);font-weight:900}
+.ct-intro-num span{font-size:12.5px;color:var(--ct-muted)}
+
+/* ============ 焦点内容 ============ */
+.ct-focus{padding:64px 0}
+.ct-focus-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+.ct-focus-main{position:relative;border-radius:22px;overflow:hidden;min-height:400px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--ct-shadow)}
+.ct-focus-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.ct-focus-main:hover img{transform:scale(1.045)}
+.ct-focus-main-body{position:relative;z-index:2;padding:28px;background:linear-gradient(180deg,transparent,rgba(9,14,22,.90))}
+.ct-focus-main-body .ct-tag{background:var(--ct-accent);color:#fff}
+.ct-focus-main-body h3{font-size:clamp(20px,2.3vw,27px);margin:10px 0 9px;color:#fff}
+.ct-focus-main-body p{font-size:14px;color:#cdd6e3;max-width:520px;margin-bottom:12px}
+.ct-focus-meta{display:flex;gap:16px;font-size:12.5px;color:#a9b5c6;flex-wrap:wrap}
+.ct-focus-list{display:grid;gap:14px}
+.ct-focus-item{display:flex;gap:14px;background:#fff;border:1px solid var(--ct-line);border-radius:16px;padding:12px;transition:.24s;align-items:center}
+.ct-focus-item:hover{transform:translateX(5px);border-color:#cfd7e5;box-shadow:0 10px 24px rgba(16,22,32,.08)}
+.ct-focus-thumb{flex:0 0 132px;aspect-ratio:16/9;border-radius:11px;overflow:hidden;position:relative;background:#dfe4ee}
+.ct-focus-thumb img{width:100%;height:100%;object-fit:cover}
+.ct-focus-item h4{font-size:14.5px;margin-bottom:5px}
+.ct-focus-item p{font-size:12.5px;color:var(--ct-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ct-focus-item .ct-tag{margin-top:6px}
+
+/* ============ 热门视频流 ============ */
+.ct-videos{background:#fff;border-top:1px solid var(--ct-line);border-bottom:1px solid var(--ct-line)}
+.ct-video-filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+.ct-filter{
+  padding:7px 16px;border-radius:22px;border:1.5px solid var(--ct-line);background:#fff;
+  font-size:13.5px;font-weight:700;color:#4c5565;transition:.2s;
+}
+.ct-filter:hover{border-color:var(--ct-accent);color:var(--ct-accent)}
+.ct-filter.ct-active{background:var(--ct-ink);color:#fff;border-color:var(--ct-ink)}
+.ct-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ct-video-card{display:flex;flex-direction:column}
+.ct-video-cover{position:relative;aspect-ratio:16/9;overflow:hidden;background:#e8ecf3}
+.ct-video-cover img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.ct-video-card:hover .ct-video-cover img{transform:scale(1.06)}
+.ct-video-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(8,12,20,.05),rgba(8,12,20,.32));
+  opacity:0;transition:.3s;
+}
+.ct-video-card:hover .ct-video-play{opacity:1}
+.ct-play-btn{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;color:var(--ct-ink);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.ct-video-duration{
+  position:absolute;right:10px;bottom:10px;background:rgba(9,14,22,.82);color:#fff;
+  font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:6px;letter-spacing:.4px;
+}
+.ct-video-corner{position:absolute;left:10px;top:10px;background:var(--ct-accent);color:#fff;font-size:11px;font-weight:800;padding:2px 9px;border-radius:6px}
+.ct-video-body{padding:15px 16px 16px;display:flex;flex-direction:column;flex:1}
+.ct-video-body h3{font-size:15.5px;margin-bottom:7px}
+.ct-video-body p{font-size:13px;color:var(--ct-muted);flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:10px}
+.ct-video-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.ct-video-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px dashed var(--ct-line);padding-top:10px}
+.ct-author-mini{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#39424f;font-weight:600;min-width:0}
+.ct-avatar{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;flex:0 0 auto}
+.ct-author-mini span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ct-video-actions{display:flex;gap:4px;flex:0 0 auto}
+.ct-icon-btn{
+  display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--ct-muted);
+  padding:4px 7px;border-radius:8px;transition:.2s;font-weight:600;
+}
+.ct-icon-btn:hover{background:var(--ct-accent-soft);color:var(--ct-accent)}
+.ct-icon-btn.ct-liked{color:var(--ct-accent)}
+.ct-icon-btn.ct-liked svg path{fill:var(--ct-accent);stroke:var(--ct-accent)}
+.ct-icon-btn.ct-saved{color:var(--ct-gold)}
+.ct-icon-btn.ct-saved svg path{fill:var(--ct-gold);stroke:var(--ct-gold)}
+.ct-empty-tip{grid-column:1/-1;text-align:center;color:var(--ct-muted);padding:30px 0;font-size:14px;display:none}
+
+/* ============ 专题企划 ============ */
+.ct-special{background:linear-gradient(180deg,#101620,#1a2433);color:#e9eef6;padding:64px 0}
+.ct-special .ct-sec-head h2{color:#fff}
+.ct-special .ct-sec-head p{color:#a8b3c3}
+.ct-special-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ct-special-card{
+  border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.11);
+  background:rgba(255,255,255,.04);transition:.26s;display:flex;flex-direction:column;
+}
+.ct-special-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.075);border-color:rgba(255,90,54,.5)}
+.ct-special-cover{aspect-ratio:4/3;position:relative;overflow:hidden}
+.ct-special-cover img{width:100%;height:100%;object-fit:cover}
+.ct-special-status{position:absolute;top:9px;left:9px;font-size:11px;font-weight:800;padding:2px 9px;border-radius:6px;background:var(--ct-teal);color:#fff}
+.ct-special-status.ct-soon{background:#8b93a3}
+.ct-special-card-body{padding:14px 15px 16px;display:flex;flex-direction:column;flex:1}
+.ct-special-card-body h3{font-size:15.5px;color:#fff;margin-bottom:6px}
+.ct-special-card-body p{font-size:12.5px;color:#a8b3c3;flex:1;margin-bottom:10px}
+.ct-special-card-body .ct-tag{background:rgba(255,255,255,.1);color:#dfe6f0;align-self:flex-start}
+
+/* ============ 创作者矩阵 ============ */
+.ct-creators{padding:64px 0}
+.ct-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ct-creator-card{padding:22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.ct-creator-avatar{
+  width:66px;height:66px;border-radius:50%;display:grid;place-items:center;
+  font-size:24px;font-weight:900;color:#fff;margin-bottom:12px;
+  box-shadow:0 8px 18px rgba(16,22,32,.16);position:relative;
+}
+.ct-creator-avatar::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px dashed rgba(255,90,54,.4)}
+.ct-creator-card h3{font-size:16px;margin-bottom:3px}
+.ct-creator-field{font-size:12px;color:var(--ct-accent);font-weight:800;letter-spacing:.6px;margin-bottom:9px}
+.ct-creator-card p{font-size:13px;color:var(--ct-muted);flex:1;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ct-creator-nums{display:flex;gap:16px;justify-content:center;font-size:12px;color:var(--ct-muted);border-top:1px dashed var(--ct-line);padding-top:11px;width:100%;margin-bottom:12px}
+.ct-creator-nums b{display:block;color:var(--ct-ink);font-size:14px;font-weight:800}
+.ct-creator-btn{font-size:12.5px;font-weight:800;color:var(--ct-accent);border:1.5px solid rgba(255,90,54,.35);padding:5px 16px;border-radius:20px;transition:.2s}
+.ct-creator-btn:hover{background:var(--ct-accent);color:#fff;border-color:var(--ct-accent)}
+
+/* ============ 故事随笔 + 影像墙 ============ */
+.ct-stories{background:#fff;border-top:1px solid var(--ct-line);padding:64px 0}
+.ct-story-layout{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.ct-story-item{display:flex;gap:16px;padding-bottom:20px;margin-bottom:20px;border-bottom:1px dashed var(--ct-line)}
+.ct-story-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.ct-story-date{
+  flex:0 0 62px;text-align:center;background:var(--ct-accent-soft);
+  border-radius:12px;padding:9px 0;color:var(--ct-accent);
+}
+.ct-story-date b{display:block;font-size:20px;font-weight:900;line-height:1.1}
+.ct-story-date span{font-size:11px;font-weight:700;letter-spacing:.6px}
+.ct-story-item h3{font-size:16px;margin-bottom:6px}
+.ct-story-item p{font-size:13.5px;color:#4c5565}
+.ct-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ct-wall-item{border-radius:12px;overflow:hidden;position:relative;background:#e8ecf3;transition:.3s}
+.ct-wall-item:hover{transform:scale(1.035);box-shadow:var(--ct-shadow);z-index:2}
+.ct-wall-item.ct-w-big{grid-column:span 2;grid-row:span 2}
+.ct-wall-item.ct-w-wide{grid-column:span 2}
+.ct-wall-item img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.ct-wall-item.ct-w-big img,.ct-wall-item.ct-w-wide img{aspect-ratio:auto}
+.ct-wall-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;
+  background:linear-gradient(180deg,transparent,rgba(9,14,22,.82));
+  color:#fff;font-size:11.5px;font-weight:700;
+  opacity:0;transform:translateY(6px);transition:.3s;
+}
+.ct-wall-item:hover .ct-wall-cap{opacity:1;transform:none}
+
+/* ============ 用户评价 ============ */
+.ct-reviews{padding:64px 0}
+.ct-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ct-review{background:#fff;border:1px solid var(--ct-line);border-radius:16px;padding:20px;transition:.24s;display:flex;flex-direction:column}
+.ct-review:hover{transform:translateY(-4px);box-shadow:var(--ct-shadow)}
+.ct-review-top{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.ct-review-top b{font-size:14px}
+.ct-review-top small{display:block;font-size:11.5px;color:var(--ct-muted);font-weight:500}
+.ct-stars{color:var(--ct-gold);font-size:12.5px;letter-spacing:1px;margin-left:auto;flex:0 0 auto}
+.ct-review p{font-size:13.5px;color:#4c5565;flex:1}
+.ct-review .ct-tag{margin-top:12px;align-self:flex-start}
+
+/* ============ 榜单 + 灵感 ============ */
+.ct-pulse{background:#101620;color:#e9eef6;padding:64px 0}
+.ct-pulse .ct-sec-head h2{color:#fff}
+.ct-pulse .ct-sec-head p{color:#a8b3c3}
+.ct-pulse-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.ct-rank-box{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);border-radius:18px;padding:20px}
+.ct-rank-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.ct-rank-tab{font-size:12.5px;font-weight:700;padding:5px 13px;border-radius:20px;background:rgba(255,255,255,.08);color:#c3cddb;border:1px solid transparent}
+.ct-rank-tab.ct-active{background:var(--ct-accent);color:#fff}
+.ct-rank-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
+.ct-rank-row:last-child{border-bottom:none}
+.ct-rank-no{flex:0 0 26px;font-size:15px;font-weight:900;color:#7f8b9c;text-align:center}
+.ct-rank-row:nth-child(1) .ct-rank-no{color:var(--ct-gold)}
+.ct-rank-row:nth-child(2) .ct-rank-no{color:#d7dde8}
+.ct-rank-row:nth-child(3) .ct-rank-no{color:#e0a878}
+.ct-rank-info{flex:1;min-width:0}
+.ct-rank-info b{display:block;font-size:13.5px;color:#eef1f6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ct-rank-info span{font-size:11.5px;color:#8d99aa}
+.ct-rank-heat{font-size:12px;font-weight:800;color:var(--ct-accent);flex:0 0 auto}
+.ct-idea-box{display:grid;gap:14px}
+.ct-idea{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.11);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:.24s}
+.ct-idea:hover{background:rgba(255,255,255,.08);border-color:rgba(255,209,102,.4)}
+.ct-idea-ico{flex:0 0 40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:18px;font-weight:900;background:rgba(255,90,54,.16);color:var(--ct-accent)}
+.ct-idea h3{font-size:14.5px;color:#fff;margin-bottom:5px}
+.ct-idea p{font-size:12.5px;color:#a8b3c3}
+
+/* ============ 企业动态 ============ */
+.ct-news{background:#fff;border-top:1px solid var(--ct-line);padding:64px 0}
+.ct-news-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.ct-news-item{display:flex;gap:15px;border:1px solid var(--ct-line);border-radius:15px;padding:17px;transition:.24s;align-items:flex-start;background:#fff}
+.ct-news-item:hover{border-color:var(--ct-accent);box-shadow:0 10px 24px rgba(255,90,54,.09)}
+.ct-news-date{flex:0 0 auto;font-size:12px;font-weight:800;color:var(--ct-accent);background:var(--ct-accent-soft);padding:5px 10px;border-radius:8px}
+.ct-news-item h3{font-size:15px;margin-bottom:5px}
+.ct-news-item p{font-size:13px;color:var(--ct-muted)}
+
+/* ============ FAQ + 联系 ============ */
+.ct-help{padding:64px 0}
+.ct-help-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+.ct-faq details{border:1px solid var(--ct-line);border-radius:13px;background:#fff;margin-bottom:11px;overflow:hidden;transition:.2s}
+.ct-faq details[open]{border-color:#cfd7e5;box-shadow:0 8px 20px rgba(16,22,32,.06)}
+.ct-faq summary{padding:15px 18px;cursor:pointer;font-weight:700;font-size:14.5px;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ct-faq summary::-webkit-details-marker{display:none}
+.ct-faq summary::after{content:"＋";color:var(--ct-accent);font-weight:900;font-size:17px;transition:.2s;flex:0 0 auto}
+.ct-faq details[open] summary::after{content:"－"}
+.ct-faq details p{padding:0 18px 16px;font-size:13.5px;color:#4c5565}
+.ct-contact-card{background:linear-gradient(160deg,#101620,#202b3c);color:#e9eef6;border-radius:20px;padding:28px;box-shadow:var(--ct-shadow)}
+.ct-contact-card h3{color:#fff;font-size:19px;margin-bottom:8px}
+.ct-contact-card > p{font-size:13.5px;color:#a8b3c3;margin-bottom:18px}
+.ct-contact-line{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.12)}
+.ct-contact-line b{flex:0 0 62px;color:var(--ct-gold);font-weight:800;font-size:12.5px}
+.ct-contact-line span{color:#c3cddb}
+.ct-contact-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+
+/* ============ 页脚 ============ */
+.ct-footer{background:#0b111a;color:#93a0b2;padding:52px 0 26px;font-size:13.5px}
+.ct-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;margin-bottom:34px}
+.ct-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ct-footer-brand .ct-brand-name{color:#fff;font-size:18px}
+.ct-footer p{line-height:1.8;font-size:13px}
+.ct-footer h4{color:#fff;font-size:14px;margin-bottom:12px;letter-spacing:.5px}
+.ct-footer ul{list-style:none;display:grid;gap:8px}
+.ct-footer ul a:hover{color:var(--ct-accent)}
+.ct-footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#6d798b}
+.ct-footer-bottom a:hover{color:var(--ct-accent)}
+
+/* ============ 模态/Toast/回到顶部 ============ */
+.ct-modal{
+  position:fixed;inset:0;background:rgba(9,14,22,.62);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;z-index:120;padding:20px;
+}
+.ct-modal.ct-show{display:flex}
+.ct-modal-box{background:#fff;border-radius:20px;max-width:480px;width:100%;padding:26px;box-shadow:0 30px 70px rgba(0,0,0,.4);position:relative;max-height:86vh;overflow:auto;animation:ctPop .26s ease}
+@keyframes ctPop{from{transform:translateY(16px) scale(.97);opacity:0}to{transform:none;opacity:1}}
+.ct-modal-box h3{font-size:19px;margin-bottom:6px}
+.ct-modal-box .ct-modal-sub{font-size:13px;color:var(--ct-muted);margin-bottom:16px}
+.ct-modal-close{position:absolute;right:14px;top:12px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:var(--ct-muted);font-size:19px}
+.ct-modal-close:hover{background:#f0f2f7;color:var(--ct-ink)}
+.ct-modal-field{margin-bottom:13px}
+.ct-modal-field label{display:block;font-size:12.5px;font-weight:800;margin-bottom:6px;color:#39424f}
+.ct-modal-field input,.ct-modal-field textarea,.ct-modal-field select{
+  width:100%;padding:10px 13px;border-radius:11px;border:1.5px solid var(--ct-line);
+  font-family:inherit;font-size:13.5px;outline:none;transition:.2s;background:#fbfbfd;color:var(--ct-ink);
+}
+.ct-modal-field input:focus,.ct-modal-field textarea:focus,.ct-modal-field select:focus{border-color:var(--ct-accent);background:#fff;box-shadow:0 0 0 4px rgba(255,90,54,.1)}
+.ct-modal-field textarea{resize:vertical;min-height:88px}
+.ct-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.ct-share-btn{flex:1;min-width:96px;padding:12px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;border:1.5px solid var(--ct-line);transition:.2s}
+.ct-share-btn:hover{border-color:var(--ct-accent);color:var(--ct-accent);background:var(--ct-accent-soft)}
+.ct-toast{
+  position:fixed;left:50%;bottom:38px;transform:translate(-50%,24px);
+  background:rgba(16,22,32,.94);color:#fff;padding:11px 22px;border-radius:30px;
+  font-size:13.5px;font-weight:700;z-index:200;opacity:0;pointer-events:none;
+  transition:.3s;box-shadow:0 16px 36px rgba(0,0,0,.36);max-width:86vw;text-align:center;
+}
+.ct-toast.ct-show{opacity:1;transform:translate(-50%,0)}
+.ct-top-btn{
+  position:fixed;right:22px;bottom:26px;width:46px;height:46px;border-radius:50%;
+  background:var(--ct-ink);color:#fff;display:grid;place-items:center;
+  box-shadow:0 12px 26px rgba(16,22,32,.32);z-index:90;opacity:0;pointer-events:none;transition:.3s;
+}
+.ct-top-btn.ct-show{opacity:1;pointer-events:auto}
+.ct-top-btn:hover{background:var(--ct-accent)}
+
+/* ============ 响应式 ============ */
+@media (max-width:1080px){
+  .ct-hero-grid{grid-template-columns:1fr;gap:34px}
+  .ct-intro-grid{grid-template-columns:1fr;gap:26px}
+  .ct-intro-aside{position:static}
+  .ct-focus-grid{grid-template-columns:1fr}
+  .ct-special-grid{grid-template-columns:repeat(2,1fr)}
+  .ct-creator-grid{grid-template-columns:repeat(2,1fr)}
+  .ct-review-grid{grid-template-columns:repeat(2,1fr)}
+  .ct-pulse-grid{grid-template-columns:1fr}
+  .ct-help-grid{grid-template-columns:1fr}
+  .ct-footer-grid{grid-template-columns:1fr 1fr;gap:26px}
+  .ct-story-layout{grid-template-columns:1fr;gap:30px}
+}
+@media (max-width:880px){
+  .ct-nav{display:none}
+  .ct-burger{display:grid}
+  .ct-search input{width:120px}
+  .ct-search input:focus{width:150px}
+  .ct-hero-stats{grid-template-columns:repeat(3,1fr);gap:9px}
+  .ct-intro-nums{grid-template-columns:repeat(2,1fr)}
+  .ct-video-grid{grid-template-columns:repeat(2,1fr)}
+  .ct-news-list{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .ct-wrap{width:calc(100% - 28px)}
+  .ct-header-inner{gap:12px;padding:10px 0}
+  .ct-brand-sub{display:none}
+  .ct-search{display:none}
+  .ct-notice-list{gap:14px}
+  .ct-notice-item:nth-child(n+3){display:none}
+  .ct-hero{padding:44px 0 52px}
+  .ct-hero-stats{grid-template-columns:1fr 1fr;max-width:none}
+  .ct-hero-stats .ct-stat:last-child{grid-column:span 2}
+  .ct-hero-float{right:4px;top:-10px;font-size:11.5px;padding:8px 12px}
+  .ct-video-grid{grid-template-columns:1fr}
+  .ct-special-grid{grid-template-columns:1fr}
+  .ct-creator-grid{grid-template-columns:1fr}
+  .ct-review-grid{grid-template-columns:1fr}
+  .ct-wall{grid-template-columns:repeat(2,1fr)}
+  .ct-wall-item.ct-w-big{grid-column:span 2;grid-row:span 1}
+  .ct-wall-item.ct-w-wide{grid-column:span 2}
+  .ct-footer-grid{grid-template-columns:1fr}
+  .ct-focus-main{min-height:320px}
+  .ct-focus-thumb{flex:0 0 104px}
+  .ct-sec{padding:46px 0}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="ct-sticky-shell">
+  <!-- 公告条 -->
+  <div class="ct-notice-bar">
+    <div class="ct-wrap">
+      <span class="ct-notice-tag">官方发布</span>
+      <div class="ct-notice-list">
+        <span class="ct-notice-item"><b>11/18</b> 新增《踩踏·城市节奏志 第三季》第 6 集上线</span>
+        <span class="ct-notice-item"><b>11/15</b> 创作者扶持计划第二期开放报名</span>
+        <span class="ct-notice-item"><b>11/11</b> 高清正版片库新增 48 部原创短片</span>
+        <span class="ct-notice-item"><b>11/05</b> 年度律动影像挑战赛投票通道开启</span>
+      </div>
+      <a class="ct-notice-more" href="#ct-news">全部动态 →</a>
+    </div>
+  </div>
+
+  <!-- 页头 -->
+  <header class="ct-header">
+    <div class="ct-wrap ct-header-inner">
+      <a class="ct-brand" href="#ct-top" aria-label="踩踏品牌官网首页">
+        <span class="ct-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7.4" stroke="#ff5a36" stroke-width="2.2"/><circle cx="12" cy="12" r="2.4" fill="#ffd166"/></svg>
+        </span>
+        <span>
+          <span class="ct-brand-name">踩踏<span>影像</span></span>
+          <span class="ct-brand-sub">CTSTEP MEDIA</span>
+        </span>
+      </a>
+
+      <nav class="ct-nav" aria-label="主导航">
+        <a href="#ct-top" class="ct-nav-active">首页</a>
+        <a href="#ct-focus">焦点内容</a>
+        <a href="#ct-videos">热门视频</a>
+        <a href="#ct-special">专题企划</a>
+        <a href="#ct-creators">创作者</a>
+        <a href="#ct-news">企业动态</a>
+        <a href="#ct-help">帮助与联系</a>
+      </nav>
+
+      <div class="ct-header-tools">
+        <div class="ct-search">
+          <input id="ctSearchInput" type="search" placeholder="搜索片名 / 作者 / 标签" aria-label="站内搜索">
+          <button id="ctSearchBtn" aria-label="搜索">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.4-3.4"/></svg>
+          </button>
+          <div class="ct-search-tip" id="ctSearchTip"></div>
+        </div>
+        <button class="ct-burger" id="ctBurger" aria-label="展开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="ct-mobile-nav" id="ctMobileNav">
+      <div class="ct-wrap">
+        <a href="#ct-top">首页</a>
+        <a href="#ct-focus">焦点内容</a>
+        <a href="#ct-videos">热门视频</a>
+        <a href="#ct-special">专题企划</a>
+        <a href="#ct-creators">创作者</a>
+        <a href="#ct-news">企业动态</a>
+        <a href="#ct-help">帮助与联系</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="ct-top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="ct-hero">
+    <div class="ct-wrap ct-hero-grid">
+      <div>
+        <span class="ct-eyebrow" style="color:var(--ct-gold)">品牌官网 · 官方发布</span>
+        <h1>踩踏</h1>
+        <p class="ct-hero-slogan">每一脚落地，都是一段<b>节奏</b>的起点</p>
+        <p class="ct-hero-desc">
+          <strong>踩踏</strong>是专注街头律动与城市节奏的原创影像品牌官网。我们以高清正版影像记录脚步、鼓点、地面与人之间的关系，
+          为创作者与观众搭建值得信赖的内容生态，让每一次踩踏都被认真看见。
+        </p>
+        <div class="ct-hero-actions">
+          <a class="ct-btn ct-btn-primary" href="#ct-videos">进入精品内容
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="ct-btn ct-btn-ghost" href="#ct-special" style="background:transparent;color:#eef1f6;border-color:rgba(255,255,255,.3)">查看专题企划</a>
+          <button class="ct-btn ct-btn-ghost" id="ctSubmitOpen1" style="background:transparent;color:#eef1f6;border-color:rgba(255,255,255,.3)">我要投稿</button>
+        </div>
+        <div class="ct-hero-stats">
+          <div class="ct-stat">
+            <div class="ct-stat-num" data-count="1860">0<small>+</small></div>
+            <div class="ct-stat-label">原创短片入库</div>
+          </div>
+          <div class="ct-stat">
+            <div class="ct-stat-num" data-count="326000">0<small>+</small></div>
+            <div class="ct-stat-label">社区创作者</div>
+          </div>
+          <div class="ct-stat">
+            <div class="ct-stat-num" data-count="9">0<small>年</small></div>
+            <div class="ct-stat-label">持续运营深耕</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-hero-visual">
+        <div class="ct-hero-float"><i>▶</i> 年度企划 · 城市节拍</div>
+        <div class="ct-hero-cover">
+          <img
+            src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 400'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23121b28'/%3E%3Cstop offset='1' stop-color='%232b394f'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23ff5a36'/%3E%3Cstop offset='1' stop-color='%23ffd166'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='400' fill='url(%23g1)'/%3E%3Cpath d='M0 300 L120 240 L220 300 L340 210 L470 288 L640 220 L640 400 L0 400 Z' fill='%231a2536'/%3E%3Cg stroke='url(%23g2)' stroke-width='3' fill='none' opacity='.95'%3E%3Cpath d='M40 336 h90 l26 -46 l30 82 l28 -60 l24 34 h60'/%3E%3Cpath d='M330 336 h70 l22 -38 l26 70 l24 -50 l20 28 h88'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.16'%3E%3Ccircle cx='96' cy='96' r='3'/%3E%3Ccircle cx='170' cy='140' r='2.4'/%3E%3Ccircle cx='250' cy='84' r='2.8'/%3E%3Ccircle cx='430' cy='112' r='2.4'/%3E%3Ccircle cx='540' cy='78' r='3'/%3E%3Ccircle cx='590' cy='150' r='2.2'/%3E%3C/g%3E%3Cg%3E%3Ccircle cx='320' cy='196' r='42' fill='none' stroke='%23ff5a36' stroke-width='4' opacity='.9'/%3E%3Ccircle cx='320' cy='196' r='8' fill='%23ffd166'/%3E%3C/g%3E%3Ctext x='40' y='372' fill='%23cfd8e6' font-family='sans-serif' font-size='15' font-weight='700' letter-spacing='3'%3ESTEP / RHYTHM 2026%3C/text%3E%3C/svg%3E"
+            alt="踩踏品牌主视觉：城市街区的脚步节奏波形图">
+          <div class="ct-hero-badge"><span class="ct-live-dot"></span> 正在更新 · 城市节奏志 第三季</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 关键词深度解析 ============ -->
+  <section class="ct-intro ct-sec" id="ct-about">
+    <div class="ct-wrap ct-intro-grid">
+      <aside class="ct-intro-aside">
+        <h3>踩踏 · 关键词档案</h3>
+        <div class="ct-aside-line"></div>
+        <p>我们如何理解“踩踏”，以及它为何值得被持续记录。</p>
+        <div class="ct-aside-chips">
+          <span>脚步</span><span>节奏</span><span>城市</span><span>律动</span><span>原创影像</span><span>社区共创</span>
+        </div>
+      </aside>
+
+      <div class="ct-intro-body">
+        <span class="ct-eyebrow">Brand Perspective</span>
+        <h2>关于“踩踏”，我们想说清楚的几件事</h2>
+        <p>
+          在<strong>踩踏</strong>这个品牌名里，我们保留了一个非常具体的动作：脚掌接触地面，重心下压，再借力弹起。它既属于舞者、乐手、跑者、滑手，
+          也属于每一个清晨匆匆出门的普通人。作为<strong>踩踏</strong>的官方网站，我们不把“踩踏”理解为嘈杂或无序，而把它视为一种可被观察、可被剪辑、
+          可被反复回味的节奏行为——它存在于地铁换乘的脚步声里，存在于鼓手落槌的瞬间，也存在于夜跑者踏上塑胶跑道的回弹之中。
+        </p>
+        <p>
+          这家企业从 2017 年开始深耕律动类影像的垂直领域，最初只是一支五人小队，用一台相机在街头拍摄脚步特写。九年过去，
+          <strong>踩踏</strong>已经成长为拥有约 1860 部原创短片、32.6 万注册创作者的视频品牌平台，累计服务超过 200 家合作机构。
+          我们依然坚持一件事：<strong>真实</strong>的节奏比精修的表演更有力量，因此平台上的大部分内容由创作者自己上传、自己剪辑、自己讲述。
+        </p>
+        <h3>“踩踏”不只是一档节目，而是一套内容方法论</h3>
+        <p>
+          在内容生态层面，<strong>踩踏</strong>把选题拆成三层次：最外层是城市与场景，比如地铁口、菜市场、老厂房、天台；
+          中间层是人物与动作，比如踩点、转向、停步、起跳；最内层是情绪与叙事，也就是一个人为什么在这一刻以这样的力度落下脚步。
+          三层叠加，才构成一支完整的<strong>踩踏</strong>短片。我们的编辑团队会为创作者提供镜头清单、节奏曲线和音乐建议，
+          但不会替他们决定故事走向，这是平台对原创性的基本尊重。
+        </p>
+        <div class="ct-intro-quote">“一次合格的踩踏记录，不靠慢镜头堆砌，而靠你是否听见了落地的重量。”</div>
+        <h3>企业级品控与社区活力如何共存</h3>
+        <p>
+          作为一家持续运营的视频品牌企业，我们在<strong>踩踏</strong>官网建立了两套并行机制：一套是内容品控，包括画幅规范、声音响度标准、
+          字幕校对与正版素材审核，保证观众打开任何一支短片都能获得稳定的高清体验；另一套是社区激励，包括月度创作挑战、新人榜、
+          口碑榜与年度律动影像挑战赛，让新面孔有机会被更多人看见。两套机制互相约束也互相成就，构成了<strong>踩踏</strong>的口碑基础。
+        </p>
+        <p>
+          我们尤其重视“陪伴”这件事。<strong>踩踏</strong>的创作者中，有超过四成是坚持更新两年以上的稳定作者，他们不追求爆款，而是像写日记一样
+          更新自己的脚步影像。平台为这批人提供长期扶持基金、设备借用与线下工作坊，因为我们相信，内容生态的厚度来自那些愿意慢慢走、
+          稳稳踩的人。这也是<strong>踩踏</strong>在行业内被视为“值得信赖”的原因——我们不追逐短期热度，只负责把节奏记录下来。
+        </p>
+        <h3>面向未来的三个坚持</h3>
+        <p>
+          第一，坚持正版与原创。所有入库内容均经版权核验，平台不使用来源不明的素材；第二，坚持技术投入。我们在<strong>踩踏</strong>品牌官网
+          开放了剪辑辅助工具，帮助创作者自动对齐节拍点，减少重复劳动；第三，坚持社区共治。投诉、举报、申诉通道全部公开透明，
+          处理进度可查。<strong>踩踏</strong>希望成为一个包容、多元、有社会责任感的影像社区，让不同城市、不同年龄、不同身体条件的人，
+          都能找到属于自己的那一段节奏。
+        </p>
+        <div class="ct-intro-nums">
+          <div class="ct-intro-num"><b>1860+</b><span>原创短片</span></div>
+          <div class="ct-intro-num"><b>32.6万</b><span>社区创作者</span></div>
+          <div class="ct-intro-num"><b>214城</b><span>覆盖拍摄地</span></div>
+          <div class="ct-intro-num"><b>98.2%</b><span>口碑推荐度</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 焦点内容 ============ -->
+  <section class="ct-focus" id="ct-focus">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">焦点内容</span>
+        <h2>本周编辑推荐的踩踏影像</h2>
+        <p>由<strong>踩踏</strong>编辑部从近千条更新中筛选，兼顾画面质感与叙事完成度，每一条都值得完整看完。</p>
+      </div>
+      <div class="ct-focus-grid">
+        <a class="ct-focus-main" href="#ct-videos">
+          <img
+            src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 480'%3E%3Cdefs%3E%3ClinearGradient id='fa' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff5a36'/%3E%3Cstop offset='1' stop-color='%23a8301a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='720' height='480' fill='%230f1622'/%3E%3Crect y='300' width='720' height='180' fill='url(%23fa)' opacity='.28'/%3E%3Cg stroke='%23ffd166' stroke-width='2' opacity='.7' fill='none'%3E%3Cpath d='M0 250 H120 V200 H240 V250 H360 V190 H500 V250 H620 V210 H720'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.9'%3E%3Ccircle cx='96' cy='120' r='34' fill='%23ff5a36' opacity='.85'/%3E%3C/g%3E%3Cpath d='M84 104 l24 16 l-24 16 z' fill='%23fff'/%3E%3Ctext x='40' y='440' fill='%23eef1f6' font-family='sans-serif' font-size='19' font-weight='800' letter-spacing='2'%3E%E5%9F%8E%E5%B8%82%E8%8A%82%E5%A5%8F%E5%BF%97%3C/text%3E%3C/svg%3E"
+            alt="焦点内容封面：城市节奏志第三季主视觉">
+          <div class="ct-focus-main-body">
+            <span class="ct-tag">焦点企划</span>
+            <h3>城市节奏志 第三季 · 第 6 集：菜市场的清晨节拍</h3>
+            <p>凌晨四点的卸货声、六点的拖车声、八点的人声，我们把一间老菜市场的三种脚步声剪成了一段六分钟的节奏叙事。</p>
+            <div class="ct-focus-meta">
+              <span>作者：踩踏官方编辑部</span><span>时长 06:12</span><span>2026-11-18 发布</span><span>播放 24.8 万</span>
+            </div>
+          </div>
+        </a>
+        <div class="ct-focus-list">
+          <a class="ct-focus-item" href="#ct-videos">
+            <span class="ct-focus-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23142636'/%3E%3Cg stroke='%2328b5b0' stroke-width='2' fill='none' opacity='.85'%3E%3Cpath d='M10 140 L60 100 L110 140 L160 84 L210 140 L260 104 L310 140'/%3E%3C/g%3E%3Ccircle cx='160' cy='60' r='22' fill='none' stroke='%23ffd166' stroke-width='3'/%3E%3Cpath d='M154 50 l16 10 l-16 10 z' fill='%23ffd166'/%3E%3C/svg%3E" alt="封面：雨夜天台的滑板落板声">
+            </span>
+            <span>
+              <h4>雨夜天台：滑板落板声的十二种切法</h4>
+              <p>同一段落板声，换十二种剪辑点，听感完全不同。</p>
+              <span class="ct-tag ct-teal">剪辑实验</span>
+            </span>
+          </a>
+          <a class="ct-focus-item" href="#ct-videos">
+            <span class="ct-focus-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23321f14'/%3E%3Cg fill='%23ffd166' opacity='.9'%3E%3Crect x='28' y='96' width='18' height='48'/%3E%3Crect x='58' y='76' width='18' height='68'/%3E%3Crect x='88' y='110' width='18' height='34'/%3E%3Crect x='118' y='60' width='18' height='84'/%3E%3C/g%3E%3Cg fill='%23ff5a36' opacity='.9'%3E%3Crect x='168' y='86' width='18' height='58'/%3E%3Crect x='198' y='104' width='18' height='40'/%3E%3Crect x='228' y='70' width='18' height='74'/%3E%3Crect x='258' y='94' width='18' height='50'/%3E%3C/g%3E%3C/svg%3E" alt="封面：鼓手练习室里的低频训练">
+            </span>
+            <span>
+              <h4>鼓手的脚：底鼓踏板上的三十分钟</h4>
+              <p>跟拍一位鼓手的基础训练，记录脚踝的重复与耐力。</p>
+              <span class="ct-tag ct-hot">人物访谈</span>
+            </span>
+          </a>
+          <a class="ct-focus-item" href="#ct-videos">
+            <span class="ct-focus-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%23101a2c'/%3E%3Cg stroke='%236f8bb5' stroke-width='2' fill='none' opacity='.9'%3E%3Crect x='26' y='70' width='50' height='70'/%3E%3Crect x='88' y='46' width='42' height='94'/%3E%3Crect x='142' y='82' width='56' height='58'/%3E%3Crect x='210' y='38' width='36' height='102'/%3E%3Crect x='258' y='64' width='38' height='76'/%3E%3C/g%3E%3Ccircle cx='160' cy='30' r='10' fill='%23ffd166'/%3E%3C/svg%3E" alt="封面：老城区石阶上的行走记录">
+            </span>
+            <span>
+              <h4>石阶之上：老城区一千级台阶的声音地图</h4>
+              <p>用声音测绘一座山城，台阶才是最诚实的坐标。</p>
+              <span class="ct-tag">城市探索</span>
+            </span>
+          </a>
+          <a class="ct-focus-item" href="#ct-videos">
+            <span class="ct-focus-thumb">
+              <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%231c2a1e'/%3E%3Cg fill='none' stroke='%2387c47a' stroke-width='2.4' opacity='.85'%3E%3Cpath d='M20 130 Q80 60 140 120 T280 90'/%3E%3Cpath d='M20 150 Q90 90 150 140 T290 116'/%3E%3C/g%3E%3Ccircle cx='240' cy='48' r='16' fill='%23ffd166' opacity='.85'/%3E%3C/svg%3E" alt="封面：山野徒步的鞋底与土壤">
+            </span>
+            <span>
+              <h4>山野踩踏：徒步鞋底与三种土壤的对话</h4>
+              <p>碎石、腐叶、湿泥，三种触地反馈的现场声。</p>
+              <span class="ct-tag ct-teal">户外活动</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 热门视频流 ============ -->
+  <section class="ct-videos ct-sec" id="ct-videos">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">热门视频</span>
+        <h2>踩踏社区正在被反复播放的六条</h2>
+        <p>支持标签筛选，点击卡片上的爱心与收藏会即时记录你的偏好。所有内容均为<strong>踩踏</strong>创作者原创上传。</p>
+      </div>
+
+      <div class="ct-video-filters" id="ctFilters">
+        <button class="ct-filter ct-active" data-filter="all">全部</button>
+        <button class="ct-filter" data-filter="教程">教程干货</button>
+        <button class="ct-filter" data-filter="城市">城市探索</button>
+        <button class="ct-filter" data-filter="人物">人物访谈</button>
+        <button class="ct-filter" data-filter="剪辑">创作幕后</button>
+        <button class="ct-filter" data-filter="户外">户外活动</button>
+      </div>
+
+      <div class="ct-video-grid" id="ctVideoGrid">
+
+        <article class="ct-card ct-video-card" data-tag="教程">
+          <div class="ct-video-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%2312202e'/%3E%3Cg stroke='%23ff5a36' stroke-width='2.4' fill='none'%3E%3Cpath d='M30 180 L90 120 L150 180 L210 96 L270 180 L330 130 L380 180'/%3E%3C/g%3E%3Cg fill='%23ffd166'%3E%3Ccircle cx='90' cy='120' r='4'/%3E%3Ccircle cx='210' cy='96' r='4'/%3E%3Ccircle cx='330' cy='130' r='4'/%3E%3C/g%3E%3Ctext x='28' y='44' fill='%23cfd8e6' font-family='sans-serif' font-size='15' font-weight='700'%3E%E8%8A%82%E6%8B%8D%E5%AF%B9%E9%BD%90%3C/text%3E%3C/svg%3E" alt="视频封面：节拍对齐剪辑教学画面">
+            <div class="ct-video-play"><span class="ct-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></span></div>
+            <span class="ct-video-duration">12:40</span>
+            <span class="ct-video-corner">教程</span>
+          </div>
+          <div class="ct-video-body">
+            <h3>脚步声怎么对齐鼓点？三步剪辑法</h3>
+            <p>从标记节拍到微调偏移，把散乱的脚步素材剪出稳定节奏，新手也能一次上手。</p>
+            <div class="ct-video-tags"><span class="ct-tag">教程干货</span><span class="ct-tag">剪辑</span></div>
+            <div class="ct-video-foot">
+              <span class="ct-author-mini"><span class="ct-avatar" style="background:#ff5a36">陈</span><span>陈默不沉默</span></span>
+              <span class="ct-video-actions">
+                <button class="ct-icon-btn ct-like-btn" data-count="1284">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+                  <em style="font-style:normal">1284</em>
+                </button>
+                <button class="ct-icon-btn ct-save-btn" aria-label="收藏">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ct-card ct-video-card" data-tag="城市">
+          <div class="ct-video-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23243448'/%3E%3Cg fill='%23ffd166' opacity='.85'%3E%3Crect x='20' y='120' width='26' height='80'/%3E%3Crect x='56' y='92' width='26' height='108'/%3E%3Crect x='92' y='132' width='26' height='68'/%3E%3C/g%3E%3Cg fill='%2328b5b0' opacity='.8'%3E%3Crect x='150' y='80' width='30' height='120'/%3E%3Crect x='190' y='110' width='30' height='90'/%3E%3C/g%3E%3Cg fill='%23ff5a36' opacity='.85'%3E%3Crect x='252' y='96' width='26' height='104'/%3E%3Crect x='288' y='130' width='26' height='70'/%3E%3Crect x='324' y='72' width='26' height='128'/%3E%3C/g%3E%3C/svg%3E" alt="视频封面：地铁换乘通道的人流脚步">
+            <div class="ct-video-play"><span class="ct-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></span></div>
+            <span class="ct-video-duration">08:26</span>
+            <span class="ct-video-corner">城市</span>
+          </div>
+          <div class="ct-video-body">
+            <h3>早高峰地铁站：三万双鞋的声音采样</h3>
+            <p>在一个换乘通道蹲守三天，记录不同鞋底与地砖碰撞出的城市底噪。</p>
+            <div class="ct-video-tags"><span class="ct-tag">城市探索</span><span class="ct-tag">日常记录</span></div>
+            <div class="ct-video-foot">
+              <span class="ct-author-mini"><span class="ct-avatar" style="background:#28b5b0">林</span><span>林野的取景框</span></span>
+              <span class="ct-video-actions">
+                <button class="ct-icon-btn ct-like-btn" data-count="2317">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+                  <em style="font-style:normal">2317</em>
+                </button>
+                <button class="ct-icon-btn ct-save-btn" aria-label="收藏">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ct-card ct-video-card" data-tag="人物">
+          <div class="ct-video-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23251c2a'/%3E%3Ccircle cx='200' cy='112' r='52' fill='none' stroke='%23ff5a36' stroke-width='3'/%3E%3Ccircle cx='200' cy='112' r='14' fill='%23ffd166'/%3E%3Cg stroke='%23a68bd6' stroke-width='2' opacity='.8'%3E%3Cpath d='M40 200 Q100 118 200 112 T360 200'/%3E%3C/g%3E%3C/svg%3E" alt="视频封面：编舞者的排练场访谈话面">
+            <div class="ct-video-play"><span class="ct-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></span></div>
+            <span class="ct-video-duration">21:05</span>
+            <span class="ct-video-corner">人物</span>
+          </div>
+          <div class="ct-video-body">
+            <h3>编舞者阿哲：我教学生先学会站稳</h3>
+            <p>一场关于重心、发力与身体记忆的长谈，穿插排练厅里反复踩点的片段。</p>
+            <div class="ct-video-tags"><span class="ct-tag">人物访谈</span><span class="ct-tag">艺术美学</span></div>
+            <div class="ct-video-foot">
+              <span class="ct-author-mini"><span class="ct-avatar" style="background:#7b5bb8">影</span><span>影格研究所</span></span>
+              <span class="ct-video-actions">
+                <button class="ct-icon-btn ct-like-btn" data-count="986">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+                  <em style="font-style:normal">986</em>
+                </button>
+                <button class="ct-icon-btn ct-save-btn" aria-label="收藏">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ct-card ct-video-card" data-tag="剪辑">
+          <div class="ct-video-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%2315211c'/%3E%3Cg stroke='%2387c47a' stroke-width='2' fill='none' opacity='.9'%3E%3Crect x='30' y='60' width='120' height='100' rx='8'/%3E%3Crect x='170' y='60' width='120' height='100' rx='8'/%3E%3C/g%3E%3Cpath d='M150 110 h20 M290 110 h50' stroke='%23ffd166' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E" alt="视频封面：剪辑软件时间线上的音频波形">
+            <div class="ct-video-play"><span class="ct-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></span></div>
+            <span class="ct-video-duration">15:32</span>
+            <span class="ct-video-corner">幕后</span>
+          </div>
+          <div class="ct-video-body">
+            <h3>一支踩踏短片是怎么被剪出来的</h3>
+            <p>从 400 分钟原素材到 6 分钟成片，完整展示取舍、降噪与节奏重构的过程。</p>
+            <div class="ct-video-tags"><span class="ct-tag">创作幕后</span><span class="ct-tag">实用技巧</span></div>
+            <div class="ct-video-foot">
+              <span class="ct-author-mini"><span class="ct-avatar" style="background:#3f8f52">周</span><span>周更剪片人</span></span>
+              <span class="ct-video-actions">
+                <button class="ct-icon-btn ct-like-btn" data-count="1742">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+                  <em style="font-style:normal">1742</em>
+                </button>
+                <button class="ct-icon-btn ct-save-btn" aria-label="收藏">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ct-card ct-video-card" data-tag="户外">
+          <div class="ct-video-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%231c2c33'/%3E%3Cpath d='M0 170 L80 110 L150 160 L230 92 L310 158 L400 118 L400 225 L0 225 Z' fill='%232c4450'/%3E%3Cpath d='M0 200 L100 150 L190 196 L280 142 L400 196 L400 225 L0 225 Z' fill='%233c5a66'/%3E%3Ccircle cx='330' cy='50' r='20' fill='%23ffd166' opacity='.9'/%3E%3C/svg%3E" alt="视频封面：越野跑者踩过碎石路径">
+            <div class="ct-video-play"><span class="ct-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></span></div>
+            <span class="ct-video-duration">18:14</span>
+            <span class="ct-video-corner">户外</span>
+          </div>
+          <div class="ct-video-body">
+            <h3>越野跑者的一百公里：落地、呼吸与碎石</h3>
+            <p>跟拍一位业余越野跑者的百公里赛程，记录每一步落地时的身体反馈。</p>
+            <div class="ct-video-tags"><span class="ct-tag">户外活动</span><span class="ct-tag">健康运动</span></div>
+            <div class="ct-video-foot">
+              <span class="ct-author-mini"><span class="ct-avatar" style="background:#33788f">高</span><span>高原不减速</span></span>
+              <span class="ct-video-actions">
+                <button class="ct-icon-btn ct-like-btn" data-count="3104">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+                  <em style="font-style:normal">3104</em>
+                </button>
+                <button class="ct-icon-btn ct-save-btn" aria-label="收藏">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="ct-card ct-video-card" data-tag="城市">
+          <div class="ct-video-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%232a1f24'/%3E%3Cg stroke='%23ff5a36' stroke-width='2.2' fill='none' opacity='.85'%3E%3Cpath d='M20 190 Q80 90 140 160 T260 120 T380 190'/%3E%3C/g%3E%3Cg fill='%23ffd166'%3E%3Ccircle cx='120' cy='60' r='22' opacity='.85'/%3E%3C/g%3E%3C/svg%3E" alt="视频封面：夜市摊位的烟火与脚步声">
+            <div class="ct-video-play"><span class="ct-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l12 7-12 7z"/></svg></span></div>
+            <span class="ct-video-duration">10:08</span>
+            <span class="ct-video-corner">城市</span>
+          </div>
+          <div class="ct-video-body">
+            <h3>夜市收摊之后：拖车声与最后一盏灯</h3>
+            <p>凌晨两点的街道，摊主们收摊的声音构成了一段意外的合奏。</p>
+            <div class="ct-video-tags"><span class="ct-tag">城市探索</span><span class="ct-tag">治愈影像</span></div>
+            <div class="ct-video-foot">
+              <span class="ct-author-mini"><span class="ct-avatar" style="background:#c0562f">许</span><span>许小满的记录</span></span>
+              <span class="ct-video-actions">
+                <button class="ct-icon-btn ct-like-btn" data-count="1425">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg>
+                  <em style="font-style:normal">1425</em>
+                </button>
+                <button class="ct-icon-btn ct-save-btn" aria-label="收藏">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <p class="ct-empty-tip" id="ctEmptyTip">没有找到符合该标签的内容，试试其他标签吧。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 专题企划 ============ -->
+  <section class="ct-special" id="ct-special">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow" style="color:var(--ct-gold)">专题企划</span>
+        <h2>踩踏正在进行的四个长期企划</h2>
+        <p>每季更新，持续追踪城市与人的节奏关系。企划均由<strong>踩踏</strong>官方编辑团队发起，面向社区开放投稿。</p>
+      </div>
+      <div class="ct-special-grid">
+
+        <a class="ct-special-card" href="#ct-videos">
+          <div class="ct-special-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 225'%3E%3Crect width='300' height='225' fill='%23121b28'/%3E%3Cg stroke='%23ff5a36' stroke-width='2' fill='none'%3E%3Cpath d='M20 160 h50 l18 -40 l20 70 l18 -50 l16 20 h60'/%3E%3C/g%3E%3Ccircle cx='220' cy='70' r='26' fill='none' stroke='%23ffd166' stroke-width='3'/%3E%3C/svg%3E" alt="专题封面：城市节奏志系列">
+            <span class="ct-special-status">更新中</span>
+          </div>
+          <div class="ct-special-card-body">
+            <h3>城市节奏志 · 第三季</h3>
+            <p>以城市为单位的脚步声田野调查，已更新至第 6 集。</p>
+            <span class="ct-tag">共 8 集</span>
+          </div>
+        </a>
+
+        <a class="ct-special-card" href="#ct-videos">
+          <div class="ct-special-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 225'%3E%3Crect width='300' height='225' fill='%23231c2e'/%3E%3Cg fill='%23a68bd6' opacity='.85'%3E%3Crect x='30' y='120' width='16' height='80'/%3E%3Crect x='56' y='90' width='16' height='110'/%3E%3Crect x='82' y='140' width='16' height='60'/%3E%3C/g%3E%3Cg fill='%23ff5a36' opacity='.9'%3E%3Crect x='150' y='70' width='16' height='130'/%3E%3Crect x='176' y='110' width='16' height='90'/%3E%3Crect x='202' y='86' width='16' height='114'/%3E%3C/g%3E%3C/svg%3E" alt="专题封面：脚步与鼓点系列">
+            <span class="ct-special-status">更新中</span>
+          </div>
+          <div class="ct-special-card-body">
+            <h3>脚步与鼓点 · 对谈录</h3>
+            <p>舞者、鼓手、跑者的长访谈，讨论身体与节拍的关系。</p>
+            <span class="ct-tag">共 5 集</span>
+          </div>
+        </a>
+
+        <a class="ct-special-card" href="#ct-news">
+          <div class="ct-special-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 225'%3E%3Crect width='300' height='225' fill='%231b2a24'/%3E%3Cg stroke='%2387c47a' stroke-width='2' fill='none'%3E%3Cpath d='M20 180 Q80 100 140 160 T280 110'/%3E%3C/g%3E%3Ccircle cx='240' cy='60' r='18' fill='%23ffd166'/%3E%3C/svg%3E" alt="专题封面：年度律动影像挑战赛">
+            <span class="ct-special-status ct-soon">报名中</span>
+          </div>
+          <div class="ct-special-card-body">
+            <h3>年度律动影像挑战赛</h3>
+            <p>面向全体创作者征集 3 分钟以内节奏短片，投票通道已开启。</p>
+            <span class="ct-tag">12/20 截止</span>
+          </div>
+        </a>
+
+        <a class="ct-special-card" href="#ct-videos">
+          <div class="ct-special-cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 225'%3E%3Crect width='300' height='225' fill='%232a2116'/%3E%3Cg fill='%23ffd166' opacity='.85'%3E%3Ccircle cx='70' cy='70' r='30'/%3E%3Crect x='150' y='60' width='120' height='12' rx='6'/%3E%3Crect x='150' y='92' width='80' height='12' rx='6'/%3E%3Crect x='150' y='124' width='100' height='12' rx='6'/%3E%3C/g%3E%3C/svg%3E" alt="专题封面：创作工具箱系列">
+            <span class="ct-special-status">已完结</span>
+          </div>
+          <div class="ct-special-card-body">
+            <h3>创作工具箱 · 音频篇</h3>
+            <p>降噪、响度、节拍标注，一线创作者分享可复用的工作流。</p>
+            <span class="ct-tag">共 6 集</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 创作者矩阵 ============ -->
+  <section class="ct-creators" id="ct-creators">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">创作者矩阵</span>
+        <h2>在踩踏扎根的四位稳定作者</h2>
+        <p>他们更新稳定、风格各异，是<strong>踩踏</strong>内容生态中最值得长期关注的一批人。</p>
+      </div>
+      <div class="ct-creator-grid">
+
+        <article class="ct-card ct-creator-card">
+          <span class="ct-creator-avatar" style="background:#ff5a36">陈</span>
+          <h3>陈默不沉默</h3>
+          <div class="ct-creator-field">剪辑教学 / 节奏拆解</div>
+          <p>前广告剪辑师，擅长把复杂的节奏问题讲得直白。更新三年从未断更。</p>
+          <div class="ct-creator-nums">
+            <div><b>96</b>作品</div>
+            <div><b>4.8万</b>粉丝</div>
+          </div>
+          <button class="ct-creator-btn" data-author="陈默不沉默" data-desc="前广告剪辑师，专注节奏拆解与剪辑教学，踩踏平台长期签约创作者，累计发布 96 部原创短片。">查看档案</button>
+        </article>
+
+        <article class="ct-card ct-creator-card">
+          <span class="ct-creator-avatar" style="background:#28b5b0">林</span>
+          <h3>林野的取景框</h3>
+          <div class="ct-creator-field">城市探索 / 声音记录</div>
+          <p>城市声音采集者，用脚步丈量街区，记录地铁、菜市场与老巷子的底噪。</p>
+          <div class="ct-creator-nums">
+            <div><b>58</b>作品</div>
+            <div><b>3.2万</b>粉丝</div>
+          </div>
+          <button class="ct-creator-btn" data-author="林野的取景框" data-desc="城市声音采集者，擅长以脚步与地景构建声音地图，代表作《三万双鞋的声音采样》。">查看档案</button>
+        </article>
+
+        <article class="ct-card ct-creator-card">
+          <span class="ct-creator-avatar" style="background:#7b5bb8">影</span>
+          <h3>影格研究所</h3>
+          <div class="ct-creator-field">人物访谈 / 艺术美学</div>
+          <p>关注身体表达与舞台艺术，擅长长访谈，能让被拍摄者慢慢说出真心话。</p>
+          <div class="ct-creator-nums">
+            <div><b>41</b>作品</div>
+            <div><b>2.6万</b>粉丝</div>
+          </div>
+          <button class="ct-creator-btn" data-author="影格研究所" data-desc="聚焦身体表达与舞台艺术的内容小组，产出高质量长访谈，代表作《编舞者阿哲》。">查看档案</button>
+        </article>
+
+        <article class="ct-card ct-creator-card">
+          <span class="ct-creator-avatar" style="background:#33788f">高</span>
+          <h3>高原不减速</h3>
+          <div class="ct-creator-field">户外运动 / 纪实</div>
+          <p>业余越野跑者，用运动相机记录长距离运动中真实的身体反应与呼吸节奏。</p>
+          <div class="ct-creator-nums">
+            <div><b>73</b>作品</div>
+            <div><b>5.1万</b>粉丝</div>
+          </div>
+          <button class="ct-creator-btn" data-author="高原不减速" data-desc="业余越野跑者与户外纪录片作者，擅长长时间跟拍，作品以真实、克制著称。">查看档案</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 故事随笔 + 影像墙 ============ -->
+  <section class="ct-stories" id="ct-stories">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">故事与影像</span>
+        <h2>编辑部手记与社区影像墙</h2>
+        <p>影像之外，我们也记录文字。以下是近期<strong>踩踏</strong>编辑与创作者写下的片段。</p>
+      </div>
+      <div class="ct-story-layout">
+        <div>
+          <article class="ct-story-item">
+            <div class="ct-story-date"><b>11</b><span>NOV</span></div>
+            <div>
+              <h3>为什么我们坚持录下原声</h3>
+              <p>很多创作者习惯用音乐盖掉环境声，但在踩踏的影像里，鞋底与地面的摩擦、呼吸的抖动、远处的车流，恰恰是最难伪造的部分。我们不反对配乐，只是希望原声被保留。</p>
+            </div>
+          </article>
+          <article class="ct-story-item">
+            <div class="ct-story-date"><b>06</b><span>NOV</span></div>
+            <div>
+              <h3>在菜市场蹲守第三天</h3>
+              <p>第一天太吵，第二天太安静，第三天摊主们习惯了镜头，才终于出现我们想要的节奏。纪录片的运气，往往来自愿意多等一天。</p>
+            </div>
+          </article>
+          <article class="ct-story-item">
+            <div class="ct-story-date"><b>29</b><span>OCT</span></div>
+            <div>
+              <h3>一位跑者的投稿附言</h3>
+              <p>他写道：“我跑得不快，但我知道每一步落在哪里。”这句话后来被我们放在了年度企划的开头，作为整个系列的注脚。</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="ct-wall">
+          <div class="ct-wall-item ct-w-big">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%2313202c'/%3E%3Cg stroke='%23ff5a36' stroke-width='3' fill='none'%3E%3Cpath d='M40 300 Q100 180 160 260 T300 210 T380 300'/%3E%3C/g%3E%3Ccircle cx='300' cy='110' r='40' fill='none' stroke='%23ffd166' stroke-width='4'/%3E%3C/svg%3E" alt="影像墙大图：夜色中的节奏曲线">
+            <span class="ct-wall-cap">街头律动 · 夜拍</span>
+          </div>
+          <div class="ct-wall-item">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232b1f2e'/%3E%3Cg fill='%23a68bd6'%3E%3Crect x='30' y='110' width='14' height='60'/%3E%3Crect x='54' y='80' width='14' height='90'/%3E%3Crect x='78' y='120' width='14' height='50'/%3E%3C/g%3E%3Cg fill='%23ff5a36'%3E%3Crect x='120' y='60' width='14' height='110'/%3E%3Crect x='144' y='100' width='14' height='70'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙小图：音频柱状节奏图">
+            <span class="ct-wall-cap">素材库</span>
+          </div>
+          <div class="ct-wall-item">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231c2a1e'/%3E%3Cpath d='M0 150 L60 90 L110 140 L160 80 L200 130 L200 200 L0 200 Z' fill='%233c5a3e'/%3E%3Ccircle cx='150' cy='52' r='22' fill='%23ffd166'/%3E%3C/svg%3E" alt="影像墙小图：户外山径">
+            <span class="ct-wall-cap">越野</span>
+          </div>
+          <div class="ct-wall-item ct-w-wide">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%2315211c'/%3E%3Cg stroke='%2387c47a' stroke-width='2' fill='none'%3E%3Crect x='30' y='50' width='140' height='100' rx='8'/%3E%3Crect x='210' y='50' width='140' height='100' rx='8'/%3E%3C/g%3E%3Cpath d='M170 100 h40' stroke='%23ffd166' stroke-width='3'/%3E%3C/svg%3E" alt="影像墙宽图：剪辑工作台">
+            <span class="ct-wall-cap">幕后工作台</span>
+          </div>
+          <div class="ct-wall-item">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%232a1f24'/%3E%3Ccircle cx='100' cy='100' r='56' fill='none' stroke='%23ff5a36' stroke-width='4'/%3E%3Ccircle cx='100' cy='100' r='16' fill='%23ffd166'/%3E%3C/svg%3E" alt="影像墙小图：圆形节拍标记">
+            <span class="ct-wall-cap">节拍</span>
+          </div>
+          <div class="ct-wall-item">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231a2536'/%3E%3Cg fill='%2328b5b0' opacity='.9'%3E%3Crect x='34' y='120' width='24' height='50'/%3E%3Crect x='70' y='90' width='24' height='80'/%3E%3C/g%3E%3Cg fill='%23ffd166' opacity='.9'%3E%3Crect x='112' y='70' width='24' height='100'/%3E%3Crect x='148' y='108' width='24' height='62'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙小图：城市街区色块">
+            <span class="ct-wall-cap">街区</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 用户评价 ============ -->
+  <section class="ct-reviews" id="ct-reviews">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">社区口碑</span>
+        <h2>他们这样评价踩踏</h2>
+        <p>来自创作者、观众与合作机构的真实反馈，语气与关注点各不相同，我们原样保留。</p>
+      </div>
+      <div class="ct-review-grid">
+
+        <div class="ct-review">
+          <div class="ct-review-top">
+            <span class="ct-avatar" style="background:#ff5a36">阿</span>
+            <span><b>阿舟的日常</b><small>创作者 · 更新 2 年</small></span>
+            <span class="ct-stars">★★★★★</span>
+          </div>
+          <p>最打动我的是编辑会给每条投稿写反馈，哪怕只是三句话，也会告诉你哪个镜头节奏偏了。这种耐心在现在的平台里很少见。</p>
+          <span class="ct-tag">创作者视角</span>
+        </div>
+
+        <div class="ct-review">
+          <div class="ct-review-top">
+            <span class="ct-avatar" style="background:#28b5b0">郑</span>
+            <span><b>郑女士</b><small>普通观众</small></span>
+            <span class="ct-stars">★★★★★</span>
+          </div>
+          <p>我不懂剪辑，就是喜欢睡前看两集城市节奏志，很安静，很治愈。画面清楚，声音也不刺耳，这点很重要。</p>
+          <span class="ct-tag">观众视角</span>
+        </div>
+
+        <div class="ct-review">
+          <div class="ct-review-top">
+            <span class="ct-avatar" style="background:#7b5bb8">研</span>
+            <span><b>研习社编辑部</b><small>合作机构</small></span>
+            <span class="ct-stars">★★★★☆</span>
+          </div>
+          <p>我们与踩踏合作过一次线下放映，流程专业，物料规范，现场执行比预期更稳。唯一建议是希望能增加更多城市站点。</p>
+          <span class="ct-tag">合作视角</span>
+        </div>
+
+        <div class="ct-review">
+          <div class="ct-review-top">
+            <span class="ct-avatar" style="background:#3f8f52">老</span>
+            <span><b>老周剪片</b><small>创作者 · 教程区常客</small></span>
+            <span class="ct-stars">★★★★★</span>
+          </div>
+          <p>节拍标注工具是真的好用，省了我大把对齐时间。教程区的干货密度也高，不像某些地方全是空话。</p>
+          <span class="ct-tag">工具反馈</span>
+        </div>
+
+        <div class="ct-review">
+          <div class="ct-review-top">
+            <span class="ct-avatar" style="background:#33788f">跑</span>
+            <span><b>跑者小川</b><small>投稿 11 次</small></span>
+            <span class="ct-stars">★★★★★</span>
+          </div>
+          <p>投了十一次，上了三次首页。没上也不难受，因为每次都能看到反馈意见，知道自己下一次该改哪里。</p>
+          <span class="ct-tag">投稿体验</span>
+        </div>
+
+        <div class="ct-review">
+          <div class="ct-review-top">
+            <span class="ct-avatar" style="background:#c0562f">叶</span>
+            <span><b>叶老师</b><small>高校影像课教师</small></span>
+            <span class="ct-stars">★★★★★</span>
+          </div>
+          <p>我把踩踏的音频篇专题当成课堂补充材料，学生反应很好。内容真实，不做作，适合初学者建立正确的听觉观念。</p>
+          <span class="ct-tag">教育场景</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 榜单 + 创作灵感 ============ -->
+  <section class="ct-pulse" id="ct-pulse">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow" style="color:var(--ct-gold)">数据与灵感</span>
+        <h2>热度榜与本周创作灵感</h2>
+        <p>榜单按近七日播放与互动加权计算，灵感卡片由<strong>踩踏</strong>编辑团队整理，可直接取用。</p>
+      </div>
+      <div class="ct-pulse-grid">
+        <div class="ct-rank-box">
+          <div class="ct-rank-tabs">
+            <button class="ct-rank-tab ct-active">热度榜</button>
+            <button class="ct-rank-tab">新人榜</button>
+            <button class="ct-rank-tab">口碑榜</button>
+          </div>
+          <div class="ct-rank-row"><span class="ct-rank-no">1</span><span class="ct-rank-info"><b>越野跑者的一百公里</b><span>高原不减速 · 户外</span></span><span class="ct-rank-heat">+312%</span></div>
+          <div class="ct-rank-row"><span class="ct-rank-no">2</span><span class="ct-rank-info"><b>早高峰地铁站的声音采样</b><span>林野的取景框 · 城市</span></span><span class="ct-rank-heat">+248%</span></div>
+          <div class="ct-rank-row"><span class="ct-rank-no">3</span><span class="ct-rank-info"><b>一支踩踏短片的诞生</b><span>周更剪片人 · 幕后</span></span><span class="ct-rank-heat">+196%</span></div>
+          <div class="ct-rank-row"><span class="ct-rank-no">4</span><span class="ct-rank-info"><b>编舞者阿哲：先学会站稳</b><span>影格研究所 · 人物</span></span><span class="ct-rank-heat">+152%</span></div>
+          <div class="ct-rank-row"><span class="ct-rank-no">5</span><span class="ct-rank-info"><b>夜市收摊之后</b><span>许小满的记录 · 城市</span></span><span class="ct-rank-heat">+118%</span></div>
+        </div>
+
+        <div class="ct-idea-box">
+          <div class="ct-idea">
+            <span class="ct-idea-ico">01</span>
+            <div><h3>脚本灵感：把一天拆成六个落点</h3><p>起床、出门、通勤、午休、下班、回家，每个节点录一段 15 秒环境音，剪成一日节奏曲线。</p></div>
+          </div>
+          <div class="ct-idea">
+            <span class="ct-idea-ico">02</span>
+            <div><h3>标题建议：用一个具体动作开头</h3><p>“踩过”“停下”“转身”比抽象形容词更容易被点开，踩踏的标题库通常优先收录动作型标题。</p></div>
+          </div>
+          <div class="ct-idea">
+            <span class="ct-idea-ico">03</span>
+            <div><h3>剪辑思路：先粗剪声音，再补画面</h3><p>先把脚步与呼吸剪出稳定节拍，再按节拍找镜头，比先剪画面后配音更容易出效果。</p></div>
+          </div>
+          <div class="ct-idea">
+            <span class="ct-idea-ico">04</span>
+            <div><h3>拍摄提醒：保留三秒环境声</h3><p>每段素材前后多录三秒，会给后期降噪与转场留出空间，这是踩踏编辑部的统一建议。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 企业动态 ============ -->
+  <section class="ct-news ct-sec" id="ct-news">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">企业动态</span>
+        <h2>踩踏官方发布与更新日志</h2>
+        <p>品牌资讯、内容更新与活动公告，均以官方名义在此发布，可追溯、可查证。</p>
+      </div>
+      <div class="ct-news-list">
+        <a class="ct-news-item" href="#ct-videos">
+          <span class="ct-news-date">2026-11-18</span>
+          <span>
+            <h3>《城市节奏志》第三季第 6 集上线</h3>
+            <p>本集取景老城区菜市场，采用双机位同期声录制，完整呈现清晨六点的节奏变化。</p>
+          </span>
+        </a>
+        <a class="ct-news-item" href="#ct-creators">
+          <span class="ct-news-date">2026-11-15</span>
+          <span>
+            <h3>创作者扶持计划第二期开放报名</h3>
+            <p>本期提供设备借用、剪辑工坊与流量扶持三项支持，面向持续更新半年以上的创作者。</p>
+          </span>
+        </a>
+        <a class="ct-news-item" href="#ct-special">
+          <span class="ct-news-date">2026-11-11</span>
+          <span>
+            <h3>高清正版片库新增 48 部原创短片</h3>
+            <p>全部片源完成画幅与声音标准化处理，支持多终端播放，并附完整创作者署名信息。</p>
+          </span>
+        </a>
+        <a class="ct-news-item" href="#ct-pulse">
+          <span class="ct-news-date">2026-11-05</span>
+          <span>
+            <h3>年度律动影像挑战赛进入投票阶段</h3>
+            <p>共收到 1,268 部投稿，初审通过 320 部，社区投票将持续至 12 月 20 日。</p>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ + 联系 ============ -->
+  <section class="ct-help" id="ct-help">
+    <div class="ct-wrap">
+      <div class="ct-sec-head">
+        <span class="ct-eyebrow">帮助与联系</span>
+        <h2>常见问题与官方联系方式</h2>
+        <p>如果以下内容没有解决你的问题，欢迎通过页面右侧的投稿与反馈入口联系<strong>踩踏</strong>团队。</p>
+      </div>
+      <div class="ct-help-grid">
+        <div class="ct-faq">
+          <details open>
+            <summary>投稿需要满足哪些基本要求？</summary>
+            <p>成片时长建议 3 至 15 分钟，画面比例 16:9 或 9:16，声音需无明显爆音与底噪。请确保素材为原创或已获得授权，并在投稿时填写完整的创作者信息。</p>
+          </details>
+          <details>
+            <summary>平台对画质与声音有什么标准？</summary>
+            <p>分辨率不低于 1080P，整体响度建议控制在 -16 LUFS 左右。我们不强制统一风格，但会统一技术参数，以保证观众在不同设备上的观看体验稳定。</p>
+          </details>
+          <details>
+            <summary>投稿后多久能收到反馈？</summary>
+            <p>常规审核周期为 5 至 7 个工作日。未通过的作品会收到文字反馈，说明具体问题，创作者修改后可再次提交，不限制提交次数。</p>
+          </details>
+          <details>
+            <summary>如何参与年度律动影像挑战赛？</summary>
+            <p>在投稿页面选择“挑战赛”分类即可，需附 200 字以内的创作说明。初审通过后自动进入社区投票环节，投票结果与专业评审各占 50%。</p>
+          </details>
+          <details>
+            <summary>版权归属是怎么约定的？</summary>
+            <p>作品版权始终归创作者所有。平台获得的是展示与推广授权，用于站内展示、官方合集与线下放映，任何商业用途都会单独与创作者协商。</p>
+          </details>
+          <details>
+            <summary>发现内容或账号异常如何反馈？</summary>
+            <p>可以通过每张卡片上的反馈按钮，或直接发送邮件至官方邮箱。所有举报均会进入公开透明的处理流程，处理进度可随时查询。</p>
+          </details>
+        </div>
+
+        <div class="ct-contact-card">
+          <h3>与踩踏团队建立联系</h3>
+          <p>内容合作、品牌联名、线下放映与媒体采访，均欢迎直接沟通。</p>
+          <div class="ct-contact-line"><b>合作邮箱</b><span>partner@ctstep-media.example</span></div>
+          <div class="ct-contact-line"><b>投稿邮箱</b><span>submit@ctstep-media.example</span></div>
+          <div class="ct-contact-line"><b>媒体咨询</b><span>press@ctstep-media.example</span></div>
+          <div class="ct-contact-line"><b>办公地址</b><span>城市创意园区 B 座 7 层 内容中心</span></div>
+          <div class="ct-contact-line"><b>工作时间</b><span>周一至周五 10:00–19:00</span></div>
+          <div class="ct-contact-actions">
+            <button class="ct-btn ct-btn-primary" id="ctSubmitOpen2">提交投稿</button>
+            <button class="ct-btn ct-btn-ghost" id="ctFeedbackOpen" style="background:transparent;color:#eef1f6;border-color:rgba(255,255,255,.3)">反馈建议</button>
+            <button class="ct-btn ct-btn-ghost" id="ctShareOpen" style="background:transparent;color:#eef1f6;border-color:rgba(255,255,255,.3)">分享官网</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer class="ct-footer">
+  <div class="ct-wrap">
+    <div class="ct-footer-grid">
+      <div>
+        <div class="ct-footer-brand">
+          <span class="ct-brand-mark" aria-hidden="true" style="width:36px;height:36px;border-radius:11px">
+            <svg viewBox="0 0 24 24" fill="none" style="width:21px;height:21px"><circle cx="12" cy="12" r="7.4" stroke="#ff5a36" stroke-width="2.2"/><circle cx="12" cy="12" r="2.4" fill="#ffd166"/></svg>
+          </span>
+          <span class="ct-brand-name" style="color:#fff">踩踏<span>影像</span></span>
+        </div>
+        <p>踩踏是专注街头律动与城市节奏的原创影像品牌，官方网站持续发布高清正版短片、创作者访谈与行业观察，致力于构建值得信赖的内容生态，让每一次踩踏都被认真看见。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#ct-focus">焦点内容</a></li>
+          <li><a href="#ct-videos">热门视频</a></li>
+          <li><a href="#ct-special">专题企划</a></li>
+          <li><a href="#ct-pulse">热度榜单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社区</h4>
+        <ul>
+          <li><a href="#ct-creators">创作者矩阵</a></li>
+          <li><a href="#ct-stories">故事与影像</a></li>
+          <li><a href="#ct-reviews">社区口碑</a></li>
+          <li><a href="#ct-news">企业动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#ct-about">品牌解析</a></li>
+          <li><a href="#ct-help">帮助与联系</a></li>
+          <li><a href="#ct-help">投稿指南</a></li>
+          <li><a href="#ct-top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ct-footer-bottom">
+      <span>© 2026 踩踏影像品牌 官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号：示例备案 2026000000 号 · 内容均为原创正版，转载请注明出处</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 弹窗 / Toast / 回到顶部 ============ -->
+<div class="ct-modal" id="ctSubmitModal">
+  <div class="ct-modal-box">
+    <button class="ct-modal-close" data-close="ctSubmitModal" aria-label="关闭">×</button>
+    <h3>向踩踏投稿</h3>
+    <p class="ct-modal-sub">填写基本信息，编辑团队将在 5–7 个工作日内给出反馈。</p>
+    <form id="ctSubmitForm">
+      <div class="ct-modal-field"><label for="ctSubName">创作者昵称</label><input id="ctSubName" required placeholder="例如：陈默不沉默"></div>
+      <div class="ct-modal-field"><label for="ctSubTitle">作品标题</label><input id="ctSubTitle" required placeholder="一句话说清这支短片的落点"></div>
+      <div class="ct-modal-field"><label for="ctSubCat">内容分类</label>
+        <select id="ctSubCat"><option>城市探索</option><option>教程干货</option><option>人物访谈</option><option>创作幕后</option><option>户外活动</option><option>治愈影像</option></select>
+      </div>
+      <div class="ct-modal-field"><label for="ctSubDesc">作品说明（200 字以内）</label><textarea id="ctSubDesc" placeholder="拍摄地点、使用的设备、想表达的情绪……"></textarea></div>
+      <button class="ct-btn ct-btn-primary" type="submit" style="width:100%;justify-content:center">提交投稿</button>
+    </form>
+  </div>
+</div>
+
+<div class="ct-modal" id="ctAuthorModal">
+  <div class="ct-modal-box">
+    <button class="ct-modal-close" data-close="ctAuthorModal" aria-label="关闭">×</button>
+    <h3 id="ctAuthorName">创作者档案</h3>
+    <p class="ct-modal-sub">数据由踩踏创作者中心同步</p>
+    <p id="ctAuthorDesc" style="font-size:14px;color:#4c5565;margin-bottom:16px"></p>
+    <div class="ct-modal-field"><label>擅长方向</label><input id="ctAuthorField" readonly value="内容创作"></div>
+    <button class="ct-btn ct-btn-primary" id="ctAuthorFollow" style="width:100%;justify-content:center">关注该创作者</button>
+  </div>
+</div>
+
+<div class="ct-modal" id="ctShareModal">
+  <div class="ct-modal-box">
+    <button class="ct-modal-close" data-close="ctShareModal" aria-label="关闭">×</button>
+    <h3>分享踩踏官网</h3>
+    <p class="ct-modal-sub">把这份节奏分享给同样在意落地声的人。</p>
+    <div class="ct-share-row">
+      <button class="ct-share-btn" data-share="微信">微信</button>
+      <button class="ct-share-btn" data-share="微博">微博</button>
+      <button class="ct-share-btn" data-share="QQ">QQ</button>
+      <button class="ct-share-btn" data-share="邮件">邮件</button>
+    </div>
+    <button class="ct-btn ct-btn-ghost" id="ctCopyLink" style="width:100%;justify-content:center">复制页面链接</button>
+  </div>
+</div>
+
+<div class="ct-modal" id="ctFeedbackModal">
+  <div class="ct-modal-box">
+    <button class="ct-modal-close" data-close="ctFeedbackModal" aria-label="关闭">×</button>
+    <h3>反馈与举报</h3>
+    <p class="ct-modal-sub">我们会在 48 小时内答复，处理流程全程可查。</p>
+    <form id="ctFeedbackForm">
+      <div class="ct-modal-field"><label for="ctFbType">反馈类型</label>
+        <select id="ctFbType"><option>内容问题</option><option>版权投诉</option><option>功能异常</option><option>合作咨询</option></select>
+      </div>
+      <div class="ct-modal-field"><label for="ctFbText">详细说明</label><textarea id="ctFbText" required placeholder="请描述具体情况，便于我们快速定位"></textarea></div>
+      <button class="ct-btn ct-btn-primary" type="submit" style="width:100%;justify-content:center">提交反馈</button>
+    </form>
+  </div>
+</div>
+
+<div class="ct-toast" id="ctToast">操作成功</div>
+<button class="ct-top-btn" id="ctTopBtn" aria-label="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 19V6M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('ctToast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('ct-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('ct-show'); }, 2400);
+  }
+
+  /* ---------- 数字滚动 ---------- */
+  var statNums = document.querySelectorAll('.ct-stat-num[data-count]');
+  function animateNum(el){
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var suffix = el.querySelector('small') ? el.querySelector('small').outerHTML : '';
+    var start = null, dur = 1200;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.floor(target * eased);
+      el.innerHTML = val.toLocaleString('en-US') + suffix;
+      if(p < 1) requestAnimationFrame(step);
+      else el.innerHTML = target.toLocaleString('en-US') + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var statObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ animateNum(en.target); statObs.unobserve(en.target); }
+      });
+    }, {threshold: 0.4});
+    statNums.forEach(function(n){ statObs.observe(n); });
+  } else {
+    statNums.forEach(function(n){
+      var t = parseInt(n.getAttribute('data-count'), 10) || 0;
+      var s = n.querySelector('small');
+      n.innerHTML = t.toLocaleString('en-US') + (s ? s.outerHTML : '');
+    });
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('ctBurger');
+  var mobileNav = document.getElementById('ctMobileNav');
+  burger.addEventListener('click', function(){
+    var open = mobileNav.classList.toggle('ct-show');
+    burger.classList.toggle('ct-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileNav.classList.remove('ct-show');
+      burger.classList.remove('ct-open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------- 搜索 ---------- */
+  var searchInput = document.getElementById('ctSearchInput');
+  var searchBtn = document.getElementById('ctSearchBtn');
+  var searchTip = document.getElementById('ctSearchTip');
+  var searchPool = [
+    {t:'城市节奏志 第三季', k:'城市 节奏 企划'},
+    {t:'脚步声怎么对齐鼓点', k:'教程 剪辑 节奏'},
+    {t:'早高峰地铁站的声音采样', k:'城市 声音 地铁'},
+    {t:'编舞者阿哲：先学会站稳', k:'人物 访谈 舞蹈'},
+    {t:'一支踩踏短片的诞生', k:'幕后 剪辑 工具'},
+    {t:'越野跑者的一百公里', k:'户外 跑步 运动'},
+    {t:'雨夜天台的滑板落板声', k:'剪辑 实验 滑板'}
+  ];
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchTip.innerHTML = '输入片名、作者或标签，例如 <strong>城市</strong>、<strong>节奏</strong>、<strong>剪辑</strong>。';
+      searchTip.classList.add('ct-show');
+      return;
+    }
+    var hits = searchPool.filter(function(item){
+      return item.t.indexOf(q) > -1 || item.k.indexOf(q) > -1;
+    });
+    if(hits.length){
+      searchTip.innerHTML = '找到 ' + hits.length + ' 条相关内容：<br>' + hits.slice(0,3).map(function(h){
+        return '· <strong>' + h.t + '</strong>';
+      }).join('<br>');
+    } else {
+      searchTip.innerHTML = '暂未找到与 <strong>' + q.replace(/[<>&]/g,'') + '</strong> 直接相关的内容，试试“城市”“节奏”“剪辑”等关键词。';
+    }
+    searchTip.classList.add('ct-show');
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.ct-search')) searchTip.classList.remove('ct-show');
+  });
+
+  /* ---------- 标签筛选 ---------- */
+  var filters = document.querySelectorAll('.ct-filter');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#ctVideoGrid .ct-video-card'));
+  var emptyTip = document.getElementById('ctEmptyTip');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(b){ b.classList.remove('ct-active'); });
+      btn.classList.add('ct-active');
+      var f = btn.getAttribute('data-filter');
+      var shown = 0;
+      cards.forEach(function(c){
+        var ok = (f === 'all') || (c.getAttribute('data-tag') === f);
+        c.style.display = ok ? '' : 'none';
+        if(ok) shown++;
+      });
+      emptyTip.style.display = shown === 0 ? 'block' : 'none';
+    });
+  });
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('.ct-like-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var numEl = btn.querySelector('em');
+      var n = parseInt(numEl.textContent, 10) || 0;
+      var liked = btn.classList.toggle('ct-liked');
+      numEl.textContent = liked ? n + 1 : Math.max(0, n - 1);
+      toast(liked ? '已点赞，感谢你的认可' : '已取消点赞');
+    });
+  });
+  document.querySelectorAll('.ct-save-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var on = btn.classList.toggle('ct-saved');
+      toast(on ? '已加入收藏，可在个人中心查看' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 弹窗通用 ---------- */
+  function openModal(id){ document.getElementById(id).classList.add('ct-show'); }
+  function closeModal(id){ document.getElementById(id).classList.remove('ct-show'); }
+  document.querySelectorAll('.ct-modal-close').forEach(function(b){
+    b.addEventListener('click', function(){ closeModal(b.getAttribute('data-close')); });
+  });
+  document.querySelectorAll('.ct-modal').forEach(function(m){
+    m.addEventListener('click', function(e){ if(e.target === m) m.classList.remove('ct-show'); });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.ct-modal.ct-show').forEach(function(m){ m.classList.remove('ct-show'); });
+      searchTip.classList.remove('ct-show');
+    }
+  });
+
+  /* ---------- 投稿 ---------- */
+  ['ctSubmitOpen1','ctSubmitOpen2'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.addEventListener('click', function(){ openModal('ctSubmitModal'); });
+  });
+  document.getElementById('ctSubmitForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    closeModal('ctSubmitModal');
+    toast('投稿已提交，编辑团队将在 5–7 个工作日内回复');
+    this.reset();
+  });
+
+  /* ---------- 创作者档案 ---------- */
+  var authorName = document.getElementById('ctAuthorName');
+  var authorDesc = document.getElementById('ctAuthorDesc');
+  var authorField = document.getElementById('ctAuthorField');
+  var followBtn = document.getElementById('ctAuthorFollow');
+  document.querySelectorAll('.ct-creator-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.ct-creator-card');
+      authorName.textContent = btn.getAttribute('data-author') + ' · 创作者档案';
+      authorDesc.textContent = btn.getAttribute('data-desc');
+      authorField.value = card.querySelector('.ct-creator-field').textContent;
+      followBtn.textContent = '关注该创作者';
+      followBtn.disabled = false;
+      openModal('ctAuthorModal');
+    });
+  });
+  followBtn.addEventListener('click', function(){
+    if(followBtn.disabled) return;
+    followBtn.textContent = '已关注 ✓';
+    followBtn.disabled = true;
+    toast('已关注，后续更新会优先推送给你');
+  });
+
+  /* ---------- 分享 ---------- */
+  document.getElementById('ctShareOpen').addEventListener('click', function(){ openModal('ctShareModal'); });
+  document.querySelectorAll('.ct-share-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      toast('已生成' + b.getAttribute('data-share') + '分享引导，可自行粘贴内容');
+    });
+  });
+  document.getElementById('ctCopyLink').addEventListener('click', function(){
+    var url = window.location.href;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        toast('链接已复制到剪贴板');
+      }).catch(function(){
+        toast('复制失败，请手动复制地址栏链接');
+      });
+    } else {
+      var tmp = document.createElement('textarea');
+      tmp.value = url;
+      tmp.style.position = 'fixed';
+      tmp.style.opacity = '0';
+      document.body.appendChild(tmp);
+      tmp.select();
+      try { document.execCommand('copy'); toast('链接已复制到剪贴板'); }
+      catch(err){ toast('复制失败，请手动复制地址栏链接'); }
+      document.body.removeChild(tmp);
+    }
+  });
+
+  /* ---------- 反馈 ---------- */
+  document.getElementById('ctFeedbackOpen').addEventListener('click', function(){ openModal('ctFeedbackModal'); });
+  document.getElementById('ctFeedbackForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    closeModal('ctFeedbackModal');
+    toast('反馈已提交，处理进度可在帮助中心查询');
+    this.reset();
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('ctTopBtn');
+  window.addEventListener('scroll', function(){
+    topBtn.classList.toggle('ct-show', window.scrollY > 520);
+  }, {passive: true});
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  /* ---------- 导航高亮 ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.ct-nav a'));
+  var secs = navLinks.map(function(a){
+    var id = a.getAttribute('href');
+    return id && id.length > 1 ? document.querySelector(id) : null;
+  });
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + 160;
+    var idx = 0;
+    secs.forEach(function(s, i){
+      if(s && s.offsetTop <= y) idx = i;
+    });
+    navLinks.forEach(function(a, i){
+      a.classList.toggle('ct-nav-active', i === idx);
+    });
+  }, {passive: true});
+
+})();
+</script>
+</body>
+                                                                   </html>
